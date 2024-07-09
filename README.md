@@ -2,6 +2,10 @@
 
 ![forREADME-CRUD](https://github.com/mtlouzada/finances-CRUD/assets/120414065/236fa4c5-a390-449f-b0ff-56115d5834d0)
 
+## Status: Developing ⚠️
+
+_Read this in other languages:_ 🇧🇷 [_Português_](./tranlations/README-ptBR.md)🟢🟡
+
 ### Description:
 
 This project was created to make my frist CRUD
