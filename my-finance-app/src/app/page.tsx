@@ -1,12 +1,10 @@
-import styles from "./page.module.css";
+import { Header } from "./components/Header/Header";
+import "./page.module.scss";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div>
-        <h1>Finance App</h1>
-
-      </div>
+    <main className="main">
+        <Header/>     
     </main>
   );
 }
