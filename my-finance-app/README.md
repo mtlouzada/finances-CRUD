@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Finances CRUD 💰
 
-## Getting Started
+![forREADME-CRUD](https://github.com/mtlouzada/finances-CRUD/assets/120414065/236fa4c5-a390-449f-b0ff-56115d5834d0)
 
-First, run the development server:
+## Status: Developing ⚠️
 
+_Read this in other languages:_ 🇧🇷 [_Português_](./translations/README-ptBR.md)🟢🟡
+
+### Description:
+
+This project was created to make my frist CRUD
+
+> JS aplication 🔧
+>
+> Readline-Sync library 📚
+>
+> Node Modules 📗
+
+### Build with:
+
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+
+### 🚀 Getting started:
+
+To run this project, make sure you have this tools installed in your development environment:
+
+* Node
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Readline-Sync
+```bash
+npm install readline-sync
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### Starting:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To start this project, just follow these 2 steps:
 
-## Learn More
+1° Open the correct project folder
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+cd project-name
+```
+2° Use Node to run the application
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+node main.js
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### How to Contribute? 📫
+If you want to contribute, clone this repo, create your work branch and get your hands dirty!
 
-## Deploy on Vercel
+```bash
+git clone https://github.com/mtlouzada/finances-CRUD.git
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+git checkout -b feature/NAME
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+At the end, open a Pull Request explaining the problem solved or feature made, if exists, append screenshot of visual modifications and wait for the review!
+
+#### Docs that might help:
+
+[📝 How to create a Pull Request](https://www.atlassian.com/br/git/tutorials/making-a-pull-request)
+
+[💾 Commit pattern](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
+
+### Developed by 🧑🏻‍💻
+#### Matheus Louzada [LinkedIn](https://www.linkedin.com/in/matheus-louzadaa)
