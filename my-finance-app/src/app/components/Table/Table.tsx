@@ -1,4 +1,4 @@
-import './table.scss'
+import './Table.scss'
 
 export function Table(){
     return(

@@ -1,6 +1,9 @@
 .container-tabela {
     max-width: 1024px;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 form {
@@ -9,4 +12,5 @@ form {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    width: 100%;
 }
