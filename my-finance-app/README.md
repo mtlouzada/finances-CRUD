@@ -69,4 +69,5 @@ At the end, open a Pull Request explaining the problem solved or feature made, i
 [💾 Commit pattern](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
 
 ### Developed by 🧑🏻‍💻
+
 #### Matheus Louzada [LinkedIn](https://www.linkedin.com/in/matheus-louzadaa)
