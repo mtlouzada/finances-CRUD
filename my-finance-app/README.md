@@ -14,6 +14,8 @@ This project was created to make my frist CRUD
 >
 > Readline-Sync library 📚
 >
+> MVC Design Pattern
+>
 > Node Modules 📗
 
 ### Build with:

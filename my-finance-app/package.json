@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "consign": "^0.1.6",
     "mysql": "^2.18.1",
     "mysql2": "^3.11.0",
     "next": "^14.2.5",
