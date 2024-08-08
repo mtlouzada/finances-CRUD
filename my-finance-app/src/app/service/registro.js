@@ -1,5 +1,7 @@
 const dbConnection = require('../service/registro.js');
 
+//testar conexão do db
+
 module.exports = function(app){
 
     var connection = dbConnection();
