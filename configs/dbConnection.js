@@ -7,4 +7,4 @@ const mysql = require('mysql');
             password : '',
             database : 'portal_noticias',
         });
-    };
+    }; 
