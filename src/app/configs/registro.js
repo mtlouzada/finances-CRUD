@@ -1,4 +1,4 @@
-const dbConnection = require('../service/registro.js');
+const dbConnection = require('./registro.js');
 
 module.exports = function(app){
 
