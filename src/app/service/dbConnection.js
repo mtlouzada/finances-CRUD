@@ -4,7 +4,7 @@ const mysql = require('mysql');
         return mysql.createConnection({
             host : 'localhost',
             user : 'root',
-            password : 'Db1234',
+            password : '',
             database : 'portal_noticias',
         });
 
