@@ -1,15 +1,5 @@
 const sqliteConnnection = require("../database/dbConnection.js");
 
-exports.getAllData = (req, res) => {
-    sqliteConnnection.all('SELECT * FROM your_table', [], (err, rows) => {
-        if (err) {
-            res.status(500).send(err.message);
-            return;
-        }
-        res.json(rows);
-    });
-};
-
 exports.createData = (req, res) => {
     const { campo1, campo2 } = req.body;
     sqliteConnnection.run('INSERT INTO your_table (campo1, campo2) VALUES (?, ?)', [campo1, campo2], function(err) {
@@ -18,6 +8,16 @@ exports.createData = (req, res) => {
             return;
         }
         res.json({ id: this.lastID });
+    });
+};
+
+exports.getAllData = (req, res) => {
+    sqliteConnnection.all('SELECT * FROM your_table', [], (err, rows) => {
+        if (err) {
+            res.status(500).send(err.message);
+            return;
+        }
+        res.json(rows);
     });
 };
 
