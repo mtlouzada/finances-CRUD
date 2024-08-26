@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const dataController = require("../controllers/datacontroller");
+const dataController = require("../controllers/datacontroller.js");
 
 router.get('/data', dataController.getAllData);
 router.post('/data', dataController.createData);

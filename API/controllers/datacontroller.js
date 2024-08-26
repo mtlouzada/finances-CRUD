@@ -1,8 +1,11 @@
+const { create } = require("domain");
 const sqliteConnnection = require("../database/dbConnection.js");
+
+// create table if no exist
 
 exports.createData = (req, res) => {
     const { campo1, campo2 } = req.body;
-    sqliteConnnection.run('INSERT INTO your_table (campo1, campo2) VALUES (?, ?)', [campo1, campo2], function(err) {
+    sqliteConnnection.run('INSERT INTO usuarios (campo1, campo2) VALUES (?, ?)', [campo1, campo2], function(err) {
         if (err) {
             res.status(500).send(err.message);
             return;
@@ -12,7 +15,7 @@ exports.createData = (req, res) => {
 };
 
 exports.getAllData = (req, res) => {
-    sqliteConnnection.all('SELECT * FROM your_table', [], (err, rows) => {
+    sqliteConnnection.all('SELECT * FROM usuarios', [], (err, rows) => {
         if (err) {
             res.status(500).send(err.message);
             return;
@@ -24,7 +27,7 @@ exports.getAllData = (req, res) => {
 exports.updateData = (req, res) => {
     const { id } = req.params;
     const { campo1, campo2 } = req.body;
-    sqliteConnnection.run('UPDATE your_table SET campo1 = ?, campo2 = ? WHERE id = ?', [campo1, campo2, id], function(err) {
+    sqliteConnnection.run('UPDATE usuarios SET campo1 = ?, campo2 = ? WHERE id = ?', [campo1, campo2, id], function(err) {
         if (err) {
             res.status(500).send(err.message);
             return;
@@ -39,7 +42,7 @@ exports.updateData = (req, res) => {
 
 exports.deleteData = (req, res) => {
     const { id } = req.params;
-    sqliteConnnection.run('DELETE FROM your_table WHERE id = ?', id, function(err) {
+    sqliteConnnection.run('DELETE FROM usuarios WHERE id = ?', id, function(err) {
         if (err) {
             res.status(500).send(err.message);
             return;
