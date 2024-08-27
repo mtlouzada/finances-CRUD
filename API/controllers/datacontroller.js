@@ -1,7 +1,9 @@
 const { create } = require("domain");
 const sqliteConnnection = require("../database/dbConnection.js");
 
-// create table if no exist
+async function createTable() {
+    sqliteConnnection.run('CREATE TABLE IF NOT EXIST')
+}
 
 exports.createData = (req, res) => {
     const { campo1, campo2 } = req.body;
