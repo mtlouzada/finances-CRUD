@@ -1,35 +1,59 @@
 const { create } = require("domain");
-const sqliteConnnection = require("../database/dbConnection.js");
+const dbConn = require("../database/dbConnection")
+const db = dbConn();
 
-async function createTable() {
-    sqliteConnnection.run('CREATE TABLE IF NOT EXIST')
-}
 
-exports.createData = (req, res) => {
-    const { campo1, campo2 } = req.body;
-    sqliteConnnection.run('INSERT INTO usuarios (campo1, campo2) VALUES (?, ?)', [campo1, campo2], function(err) {
-        if (err) {
-            res.status(500).send(err.message);
-            return;
-        }
-        res.json({ id: this.lastID });
-    });
+exports.createTable = (req, res) => {
+    try {
+        db.exec(`CREATE TABLE usuarios
+            (
+              ID INTEGER PRIMARY KEY AUTOINCREMENT,
+              nome   VARCHAR(50) NOT NULL,
+              senha   VARCHAR(50) NOT NULL,
+              saldo INTEGER NOT NULL
+            );`
+          );
+
+    } catch (error) {
+        console.warn("Tentando criar a tabela novamente. Implemente o IF TABLE EXIST");
+    }
+};
+
+exports.createUser = (req, res) => {
+    const { nome, senha, saldo } = req.body;
+    try {
+        const stmt = db.prepare("INSERT INTO usuarios (nome, senha, saldo) VALUES (?, ?, ?)");
+        stmt.run(nome, senha, saldo, function(err) {
+            if (err) {
+                throw err;
+            }
+            console.log(`User inserted with ID: ${this.lastID}`);
+            res.send(`User inserted with ID!`);
+        });
+        stmt.finalize();
+    } catch (error) {
+        console.error("Error inserting user:", error.message);
+    }
 };
 
 exports.getAllData = (req, res) => {
-    sqliteConnnection.all('SELECT * FROM usuarios', [], (err, rows) => {
-        if (err) {
-            res.status(500).send(err.message);
-            return;
-        }
-        res.json(rows);
-    });
+    try {
+        db.all("SELECT * FROM usuarios", (err, rows) => {
+            if (err) {
+                throw err;
+            }
+            console.log("Query Result:", rows);
+            res.send(rows);
+        });
+    } catch (error) {
+        console.error("Error executing SELECT query:", error.message);
+    }
 };
 
 exports.updateData = (req, res) => {
     const { id } = req.params;
     const { campo1, campo2 } = req.body;
-    sqliteConnnection.run('UPDATE usuarios SET campo1 = ?, campo2 = ? WHERE id = ?', [campo1, campo2, id], function(err) {
+    db.run('UPDATE usuarios SET campo1 = ?, campo2 = ? WHERE id = ?', [campo1, campo2, id], function(err) {
         if (err) {
             res.status(500).send(err.message);
             return;
@@ -44,7 +68,7 @@ exports.updateData = (req, res) => {
 
 exports.deleteData = (req, res) => {
     const { id } = req.params;
-    sqliteConnnection.run('DELETE FROM usuarios WHERE id = ?', id, function(err) {
+    db.run('DELETE FROM usuarios WHERE id = ?', id, function(err) {
         if (err) {
             res.status(500).send(err.message);
             return;

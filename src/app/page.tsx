@@ -14,7 +14,7 @@ export default function Home() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/data');
+      const response = await fetch('http://localhost:3015/data');
       const result = await response.json();
       setData(result);
     } catch (error) {
