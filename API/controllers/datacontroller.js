@@ -51,20 +51,14 @@ exports.getAllData = (req, res) => {
 };
 
 exports.updateData = (req, res) => {
-    // const { id } = req.params;
     const { nome, senha, saldo } = req.body;
     try {
-        const stmt = db.run('UPDATE usuarios SET nome = teste2, senha = 54321, saldo = 1000, WHERE id = 4')
+        const stmt = db.run('UPDATE usuarios SET (ID, nome, senha, saldo) WHERE id = ?')
         stmt.run(nome, senha, saldo, function(err) {
             if (err) {
                 res.status(500).send(err.message);
                 return;
             }
-           /* if (this.changes === 0) {
-                res.status(404).send('Registro não encontrado');
-            } else {
-                res.json({ updatedID: id });
-            } */
         });
     } catch (error) {
         console.error("Error inserting user:", error.message);
