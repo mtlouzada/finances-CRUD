@@ -51,7 +51,7 @@ cd project-name
 node main.js
 ```
 
-### How to Contribute? 📫
+### How to Contribute? 📫🦾
 If you want to contribute, clone this repo, create your work branch and get your hands dirty!
 
 ```bash
