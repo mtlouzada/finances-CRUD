@@ -67,15 +67,14 @@ exports.updateData = (req, res) => {
 
 exports.deleteData = (req, res) => {
     const { id } = req.params;
-    db.run('DELETE FROM usuarios WHERE id = ?', id, function(err) {
-        if (err) {
-            res.status(500).send(err.message);
-            return;
-        }
-        if (this.changes === 0) {
-            res.status(404).send('Registro não encontrado');
-        } else {
-            res.json({ deletedID: id });
-        }
-    });
+    try {
+        const stmt = db.run('DELETE FROM usuarios WHERE id = ?', id, function(err) {
+            if (err) {
+                res.status(500).send(err.message);
+                return;
+            }
+        });
+    } catch (error) {
+        console.error("Error delete user:", error.message);
+    }
 };
