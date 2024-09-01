@@ -36,7 +36,7 @@ exports.createUser = (req, res) => {
     }
 };
 
-exports.getAllData = (req, res) => {
+exports.readData = (req, res) => {
     try {
         db.all("SELECT * FROM usuarios", (err, rows) => {
             if (err) {
@@ -51,17 +51,34 @@ exports.getAllData = (req, res) => {
 };
 
 exports.updateData = (req, res) => {
-    const { nome, senha, saldo } = req.body;
+    const { id, nome, senha, saldo } = req.body;
     try {
-        const stmt = db.run('UPDATE usuarios SET (ID, nome, senha, saldo) WHERE id = ?')
-        stmt.run(nome, senha, saldo, function(err) {
+        let sql = 'UPDATE usuarios SET nome="?" WHERE id=?';
+        sql = 'UPDATE usuarios SET nome="'+nome+'" WHERE id='+id;
+        // senha=?" saldo=?
+        let data = [nome, id];
+        // let data = [nome, senha, saldo, id];
+        console.warn(sql)
+        db.run(sql, function(err) {
+                if (err) {
+                    console.error(err.message);
+                    res.send(err.message);
+                }
+                console.log(`Row(s) updated: ${this.changes}`)
+                res.send(`Row(s) updated: ${this.changes}`);
+            }
+        );
+
+        /*const stmt = db.prepare(
+            'UPDATE usuarios SET (nome, senha, saldo) VALUES (?, ?, ?) WHERE id = ?');
+        stmt.run(nome, senha, saldo, id, function(err) {
             if (err) {
                 res.status(500).send(err.message);
                 return;
             }
-        });
+        });*/
     } catch (error) {
-        console.error("Error inserting user:", error.message);
+        console.error("Error update user:", error.message);
     }
 };
 

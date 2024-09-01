@@ -1,6 +1,7 @@
 {
   "version": "0.2.0",
-  "configurations": [
+  "configurations": 
+  [
     {
         "type": "node-terminal",
         "name": "debug api",
@@ -8,5 +9,14 @@
         "command": "npm run dev:API",
         "cwd": "${workspaceFolder}/API/",
         "sourceMaps": true,
-  }]
+    },
+    {
+      "type": "node-terminal",
+      "name": "nodemon api",
+      "request": "launch",
+      "command": "npm run nodemon",
+      "cwd": "${workspaceFolder}/API/",
+      "sourceMaps": true,
+  }
+  ]
 }
