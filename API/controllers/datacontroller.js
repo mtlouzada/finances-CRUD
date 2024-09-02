@@ -82,6 +82,38 @@ exports.updateData = (req, res) => {
     }
 };
 
+// exports.updateData2 = (req, res) => {
+//     const { id, nome, senha, saldo } = req.body;
+//     try {
+//         let sql = 'UPDATE usuarios SET nome="?" WHERE id=?';
+//         sql = 'UPDATE usuarios SET nome="'+nome+'" WHERE id='+id;
+//         // senha=?" saldo=?
+//         let data = [nome, id];
+//         // let data = [nome, senha, saldo, id];
+//         console.warn(sql)
+//         db.run(sql, function(err) {
+//                 if (err) {
+//                     console.error(err.message);
+//                     res.send(err.message);
+//                 }
+//                 console.log(`Row(s) updated: ${this.changes}`)
+//                 res.send(`Row(s) updated: ${this.changes}`);
+//             }
+//         );
+
+//         /*const stmt = db.prepare(
+//             'UPDATE usuarios SET (nome, senha, saldo) VALUES (?, ?, ?) WHERE id = ?');
+//         stmt.run(nome, senha, saldo, id, function(err) {
+//             if (err) {
+//                 res.status(500).send(err.message);
+//                 return;
+//             }
+//         });*/
+//     } catch (error) {
+//         console.error("Error update user:", error.message);
+//     }
+// };
+
 exports.deleteData = (req, res) => {
     const { id } = req.params;
     try {
