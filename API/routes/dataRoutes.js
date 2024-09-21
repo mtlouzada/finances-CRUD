@@ -7,6 +7,7 @@ router.get('/data', dataController.readData);
 router.get('/criatabela', dataController.createTable);
 router.post('/novouser', dataController.createUser);
 router.put('/updateuser', dataController.updateData);
+
 // router.put('/updateTeste', dataController.updateData2);
 router.delete('/deleteuser', dataController.deleteData);
 
