@@ -56,7 +56,6 @@ exports.updateData = (req, res) => {
         let sql = 'UPDATE usuarios SET nome="?", senha="?" WHERE id=?';
         sql = `UPDATE usuarios SET nome="${nome}", senha="${senha}", saldo="${saldo}" WHERE id=${id};`;
 
-        // let data = [nome, senha, saldo, id];
         console.warn(sql)
         db.run(sql, function(err) {
                 if (err) {
@@ -68,14 +67,6 @@ exports.updateData = (req, res) => {
             }
         );
 
-        /*const stmt = db.prepare(
-            'UPDATE usuarios SET (nome, senha, saldo) VALUES (?, ?, ?) WHERE id = ?');
-        stmt.run(nome, senha, saldo, id, function(err) {
-            if (err) {
-                res.status(500).send(err.message);
-                return;
-            }
-        });*/
     } catch (error) {
         console.error("Error update user:", error.message);
     }
@@ -84,11 +75,16 @@ exports.updateData = (req, res) => {
 exports.deleteData = (req, res) => {
     const { id } = req.params;
     try {
-        const stmt = db.run('DELETE FROM usuarios WHERE id = ?', id, function(err) {
+        let sql = 'DELETE FROM usuarios WHERE id=?';
+        sql = `DELETE FROM usuarios WHERE id="${id}"`;
+
+        db.run(sql, [id], function(err) {
             if (err) {
                 res.status(500).send(err.message);
                 return;
             }
+            console.log(`Row(s) deleted: ${this.changes}`)
+            res.send(`Row(s) deleted: ${this.changes}`);
         });
     } catch (error) {
         console.error("Error delete user:", error.message);

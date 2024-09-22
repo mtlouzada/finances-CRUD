@@ -17,7 +17,7 @@ function createDbConnection() {
     }
     console.log("Connection with SQLite has been established");
   });
-  
+
   dbInstance = db
   return db;
 }
