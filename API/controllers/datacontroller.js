@@ -72,13 +72,14 @@ exports.updateData = (req, res) => {
     }
 };
 
+
 exports.deleteData = (req, res) => {
     const { id } = req.params;
     try {
-        let sql = 'DELETE FROM usuarios WHERE id=?';
+        let sql = 'DELETE FROM usuarios WHERE id="?"';
         sql = `DELETE FROM usuarios WHERE id="${id}"`;
 
-        db.run(sql, [id], function(err) {
+        db.run(sql, function(err) {
             if (err) {
                 res.status(500).send(err.message);
                 return;
