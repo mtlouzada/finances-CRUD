@@ -2,8 +2,8 @@
 
 import { Header } from "./components/Header/Header";
 import { Table } from "./components/Table/Table";
-import "./page.module.css";
 import { useEffect, useState } from 'react';
+
 
 export default function Home() {
   const [data, setData] = useState<any[]>([]);
