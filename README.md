@@ -8,7 +8,7 @@ _Read this in other languages:_ 🇧🇷 [_Português_](./translations/README-pt
 
 ### Description:
 
-This app is made for help you stay top on your finances at web2 and web3 block world, created first for training my skills about CRUD systems and I made updates on main branch plan for use on ICP Hackaton. Not finish yet but will made that in one or two month.
+This app is made for help you stay top on your finances. Not finish yet but will made that in one or two month.
 
 ### Built with:
 
