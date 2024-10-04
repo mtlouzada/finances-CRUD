@@ -2,7 +2,7 @@
 
 ![forREADME-CRUD](https://github.com/mtlouzada/finances-CRUD/assets/120414065/236fa4c5-a390-449f-b0ff-56115d5834d0)
 
-## Status: Developing ⚠️
+## Status: Developing ⚠️ I will finish that in this month (october)
 
 _Read this in other languages:_ 🇧🇷 [_Português_](./translations/README-ptBR.md)🟢🟡
 
