@@ -4,7 +4,7 @@
 
 ## Status: Developing ⚠️ 
 
-### I will finish that in this month (october)
+### I will finish that in this month (october) hard developement - on ✅
 
 _Read this in other languages:_ 🇧🇷 [_Português_](./translations/README-ptBR.md)🟢🟡
 
