@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Finances CRUD",
-  description: "Create to help you stay on top of your finances.",
+  title: "Chain Metrics",
+  description: "Dapp",
 };
 
 export default function RootLayout({
