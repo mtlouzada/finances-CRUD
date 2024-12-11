@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "chain-metrics-backend": {
+      "main": "src/chain-metrics-backend/main.mo",
+      "type": "motoko"
+    },
+    "chain-metrics-frontend": {
+      "dependencies": [
+        "chain-metrics-backend"
+      ],
+      "source": [
+        "src/chain-metrics-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "chain-metrics-frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
